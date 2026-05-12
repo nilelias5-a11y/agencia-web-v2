@@ -1,0 +1,13 @@
+{
+  "eval_id": 2,
+  "eval_name": "seo-writer-local-business",
+  "skill": "seo-writer",
+  "prompt": "Quiero posicionar mi web de fontanería en Madrid con la keyword 'fontanero urgente Madrid'. ¿Cómo escribo un artículo optimizado para esa búsqueda y cómo lo integro con generateMetadata en Next.js 15 App Router?",
+  "assertions": [
+    {"name": "generatemeta-not-head", "description": "Usa generateMetadata() del App Router — NO usa <Head> del Pages Router ni next/head"},
+    {"name": "canonical-url-included", "description": "Incluye canonical URL en el objeto alternates de generateMetadata"},
+    {"name": "json-ld-localBusiness-or-article", "description": "Incluye JSON-LD de tipo LocalBusiness o Article con código real"},
+    {"name": "intent-analysis", "description": "Analiza la intención de búsqueda de la keyword antes de proponer la estructura del contenido"},
+    {"name": "keyword-in-h1-and-intro", "description": "La keyword principal aparece en el H1 y en los primeros párrafos del artículo"}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "eval_id": 6,
+  "configuration": "without_skill",
+  "assertions": [
+    {
+      "text": "day-by-day-structure",
+      "passed": true,
+      "evidence": "Dedicated sections for D-7, D-6, D-5, D-4, D-3, D-2, D-1, D0 with specific content for each day. More granular than with_skill (8 days vs 5)."
+    },
+    {
+      "text": "platform-specific-content",
+      "passed": true,
+      "evidence": "LinkedIn uses long-form narratives, Twitter uses shorter tweets/hilos. Format and tone differ per platform."
+    },
+    {
+      "text": "hook-formula-identified",
+      "passed": true,
+      "evidence": "D-7 LinkedIn starts with 'Pasé 3 años viendo cómo equipos enteros perdían el 40% de su tiempo' — number hook (40%). D-7 Twitter: 'Los equipos no fallan por falta de esfuerzo. Fallan porque...' — contradiction hook. Both identifiable."
+    },
+    {
+      "text": "og-image-mentioned",
+      "passed": false,
+      "evidence": "No mention of Open Graph image, opengraph-image.tsx, ImageResponse, or next/og. The campaign plan doesn't address how the launch link preview looks on social media."
+    }
+  ],
+  "score": 3,
+  "total": 4,
+  "pass_rate": 0.75
+}

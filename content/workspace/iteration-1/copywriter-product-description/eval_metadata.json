@@ -1,0 +1,12 @@
+{
+  "eval_id": 1,
+  "eval_name": "copywriter-product-description",
+  "skill": "copywriter",
+  "prompt": "Tenemos una tienda online de café de especialidad en Barcelona. Escribe la descripción de producto para nuestro 'Blend de Temporada Etiopía-Brasil' de 250g a 18€. Es tostado medio, notas de fruta roja y chocolate. Va dirigido a amantes del café de calidad.",
+  "assertions": [
+    {"name": "copy-in-nextintl-format", "description": "Entrega el copy en estructura de messages JSON compatible con next-intl"},
+    {"name": "sensory-language", "description": "Usa lenguaje sensorial concreto (sabor, aroma, textura, notas) — no solo características técnicas"},
+    {"name": "benefit-over-feature", "description": "Habla de beneficios para el cliente más que de características del producto"},
+    {"name": "cta-product", "description": "Incluye CTA específico para e-commerce — no genérico"}
+  ]
+}

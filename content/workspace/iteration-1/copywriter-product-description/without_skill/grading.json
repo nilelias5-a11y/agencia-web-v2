@@ -1,0 +1,29 @@
+{
+  "eval_id": 1,
+  "configuration": "without_skill",
+  "assertions": [
+    {
+      "text": "copy-in-nextintl-format",
+      "passed": false,
+      "evidence": "Plain markdown format, no JSON structure, no messages/es.json block. Not next-intl compatible."
+    },
+    {
+      "text": "sensory-language",
+      "passed": true,
+      "evidence": "'vivacidad frutal', 'profundidad achocolatada', 'acidez elegante', 'fruta roja', 'chocolate', 'cuerpo redondo' — rich sensory language throughout."
+    },
+    {
+      "text": "benefit-over-feature",
+      "passed": true,
+      "evidence": "Has 'Para quien es este cafe' section with benefit-oriented bullets. Also communicates experience over specs in the description."
+    },
+    {
+      "text": "cta-product",
+      "passed": false,
+      "evidence": "No CTA at all. Response ends with '250 g en grano o molido según tu método'. No 'Añadir al carrito' or equivalent e-commerce action."
+    }
+  ],
+  "score": 2,
+  "total": 4,
+  "pass_rate": 0.5
+}

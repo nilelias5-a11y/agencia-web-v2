@@ -1,0 +1,29 @@
+{
+  "eval_id": 5,
+  "configuration": "with_skill",
+  "assertions": [
+    {
+      "text": "audit-classification-categories",
+      "passed": true,
+      "evidence": "Section '2. Clasificación del Contenido Existente' uses exact categories: Estrella, Promesa, Duplicado, Zombie with criteria table and process to classify."
+    },
+    {
+      "text": "action-plan-prioritized",
+      "passed": true,
+      "evidence": "Section '3. Plan de Acción Priorizado': Primer paso (Promesas), Segundo paso (Zombies), Tercer paso (Duplicados), Cuarto paso (contenido nuevo). Each step has 'Por qué primero/segundo/tercero' justification."
+    },
+    {
+      "text": "editorial-calendar-table",
+      "passed": true,
+      "evidence": "Table with 'Semana | Título propuesto | Nivel embudo | Keyword principal | Formato | Canal | Estado' covering 12 weeks of new content post-audit."
+    },
+    {
+      "text": "jtbd-or-persona",
+      "passed": true,
+      "evidence": "Section '4. JTBD Framework: Identificar Gaps de Contenido' with 5 situaciones JTBD table and 3 buyer personas (Consciente Primeriza, Compradora Informada, Regalo/Ocasión Especial)."
+    }
+  ],
+  "score": 4,
+  "total": 4,
+  "pass_rate": 1.0
+}

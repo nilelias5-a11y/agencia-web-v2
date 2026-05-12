@@ -1,0 +1,12 @@
+{
+  "eval_id": 7,
+  "eval_name": "social-media-repurposing",
+  "skill": "social-media-manager",
+  "prompt": "Tengo un artículo de 2000 palabras sobre cómo mejorar la productividad trabajando desde casa. ¿Cómo lo convierto en contenido para Twitter, LinkedIn e Instagram? Dame el contenido listo para publicar.",
+  "assertions": [
+    {"name": "repurposing-matrix", "description": "Muestra explícitamente la transformación del artículo en múltiples formatos (tabla o lista clara)"},
+    {"name": "platform-specific-content", "description": "Twitter (hilo), LinkedIn (post largo) e Instagram (carrusel/caption) tienen formatos y tonos diferentes"},
+    {"name": "hook-formula-in-each", "description": "Cada pieza empieza con un hook diferente adaptado a la plataforma"},
+    {"name": "utm-parameters", "description": "Menciona o muestra UTM parameters para trackear el tráfico desde cada plataforma social"}
+  ]
+}

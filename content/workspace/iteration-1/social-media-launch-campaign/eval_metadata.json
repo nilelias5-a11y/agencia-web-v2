@@ -1,0 +1,12 @@
+{
+  "eval_id": 6,
+  "eval_name": "social-media-launch-campaign",
+  "skill": "social-media-manager",
+  "prompt": "Voy a lanzar mi herramienta SaaS de gestión de proyectos el próximo martes. ¿Cómo planifico la campaña de lanzamiento en LinkedIn y Twitter para los 7 días anteriores al lanzamiento, y el día del lanzamiento?",
+  "assertions": [
+    {"name": "day-by-day-structure", "description": "Estructura la campaña con contenido específico por día (D-7, D-5, D-3, D-1, D0) — no solo temas generales"},
+    {"name": "platform-specific-content", "description": "El contenido de LinkedIn es diferente al de Twitter en formato y tono — no es el mismo texto en ambas plataformas"},
+    {"name": "hook-formula-identified", "description": "El primer post de la campaña usa una fórmula de hook identificable (contradicción, número, pregunta, resultado específico)"},
+    {"name": "og-image-mentioned", "description": "Menciona o implementa Open Graph image con next/og para que el link del lanzamiento se vea bien al compartirse"}
+  ]
+}

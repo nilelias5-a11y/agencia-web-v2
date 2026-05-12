@@ -1,0 +1,129 @@
+{
+  "skill_names": ["copywriter", "seo-writer", "content-strategist", "social-media-manager", "translator"],
+  "evals": [
+    {
+      "id": 0,
+      "skill": "copywriter",
+      "eval_name": "copywriter-home-agency",
+      "prompt": "Necesito el copy completo para la home de mi agencia de diseño digital. Los clientes son startups tech. Incluye: hero con propuesta de valor, sección de servicios (diseño, desarrollo web, estrategia digital) y CTA final para agendar llamada.",
+      "assertions": [
+        {"name": "copy-in-nextintl-format", "description": "Entrega el copy en estructura de messages/es.json compatible con next-intl, no solo texto plano"},
+        {"name": "pas-formula-or-structure", "description": "El hero usa fórmula PAS (Problema, Agitación, Solución) o estructura equivalente con propuesta de valor clara"},
+        {"name": "cta-hierarchy", "description": "Diferencia entre CTA primario (alta intención) y CTA secundario (bajo compromiso) — no usa 'Saber más' como CTA principal"},
+        {"name": "tone-defined-first", "description": "Define o declara el tono/voz de marca antes de escribir el copy"},
+        {"name": "scannable-structure", "description": "Usa bullets, subheadings numerados, o estructura F-pattern — el copy es scannable en diagonal"}
+      ]
+    },
+    {
+      "id": 1,
+      "skill": "copywriter",
+      "eval_name": "copywriter-product-description",
+      "prompt": "Tenemos una tienda online de café de especialidad en Barcelona. Escribe la descripción de producto para nuestro 'Blend de Temporada Etiopía-Brasil' de 250g a 18€. Es tostado medio, notas de fruta roja y chocolate. Va dirigido a amantes del café de calidad.",
+      "assertions": [
+        {"name": "copy-in-nextintl-format", "description": "Entrega el copy en estructura de messages JSON compatible con next-intl"},
+        {"name": "sensory-language", "description": "Usa lenguaje sensorial concreto (sabor, aroma, textura, notas) — no solo características técnicas"},
+        {"name": "benefit-over-feature", "description": "Habla de beneficios para el cliente más que de características del producto"},
+        {"name": "cta-product", "description": "Incluye CTA específico para e-commerce (no genérico) — 'Añadir al carrito', 'Probar ahora', etc."}
+      ]
+    },
+    {
+      "id": 2,
+      "skill": "seo-writer",
+      "eval_name": "seo-writer-local-business",
+      "prompt": "Quiero posicionar mi web de fontanería en Madrid con la keyword 'fontanero urgente Madrid'. ¿Cómo escribo un artículo optimizado para esa búsqueda y cómo lo integro con generateMetadata en Next.js 15 App Router?",
+      "assertions": [
+        {"name": "generatemeta-not-head", "description": "Usa generateMetadata() del App Router — NO usa <Head> del Pages Router ni next/head"},
+        {"name": "canonical-url-included", "description": "Incluye canonical URL en el objeto alternates de generateMetadata"},
+        {"name": "json-ld-localBusiness-or-article", "description": "Incluye JSON-LD de tipo LocalBusiness o Article (no simplemente menciona que existe)"},
+        {"name": "intent-analysis", "description": "Analiza la intención de búsqueda de la keyword antes de proponer la estructura del contenido"},
+        {"name": "keyword-in-h1-and-intro", "description": "La keyword principal aparece en el H1 y en los primeros 100 palabras del artículo"}
+      ]
+    },
+    {
+      "id": 3,
+      "skill": "seo-writer",
+      "eval_name": "seo-writer-recipe-schema",
+      "prompt": "Tengo un blog de recetas en Next.js 15. Quiero añadir schema.org/Recipe a las páginas de receta para aparecer en Google con rich snippets, y también generar el sitemap.xml automáticamente. ¿Cómo lo implemento?",
+      "assertions": [
+        {"name": "recipe-json-ld", "description": "El JSON-LD usa @type: Recipe (schema.org/Recipe), no BlogPosting genérico"},
+        {"name": "sitemap-in-app-folder", "description": "El sitemap se implementa en app/sitemap.ts con MetadataRoute.Sitemap — no en public/ ni en pages/"},
+        {"name": "dynamic-sitemap-async", "description": "La función sitemap() es async y lee las recetas dinámicamente (desde BD o API), no hardcodea URLs"},
+        {"name": "og-image-implementation", "description": "Menciona o implementa opengraph-image.tsx con ImageResponse de next/og"}
+      ]
+    },
+    {
+      "id": 4,
+      "skill": "content-strategist",
+      "eval_name": "content-strategist-saas-launch",
+      "prompt": "Acabo de lanzar una SaaS de gestión de facturas para autónomos en España. No tengo nada de contenido publicado. ¿Por dónde empiezo y qué publico los primeros 3 meses para generar tráfico orgánico y leads?",
+      "assertions": [
+        {"name": "pillar-cluster-model", "description": "Propone el modelo pillar page + cluster content — no una lista plana de artículos sin arquitectura"},
+        {"name": "tofu-mofu-bofu-distribution", "description": "Distribuye el contenido en TOFU/MOFU/BOFU con porcentajes o proporciones justificadas"},
+        {"name": "editorial-calendar-table", "description": "Entrega el calendario en formato tabla con columnas (semana/fecha, título, nivel embudo, canal)"},
+        {"name": "quick-wins", "description": "Incluye 2-3 quick wins con resultado esperado en menos de 30 días"},
+        {"name": "kpis-defined", "description": "Define KPIs específicos de seguimiento (no solo 'medir el tráfico')"}
+      ]
+    },
+    {
+      "id": 5,
+      "skill": "content-strategist",
+      "eval_name": "content-strategist-content-audit",
+      "prompt": "Mi e-commerce de ropa sostenible lleva 2 años y tiene 30 artículos en el blog pero casi cero tráfico orgánico. ¿Cómo hago una auditoría de contenido y qué hago con lo que encuentre?",
+      "assertions": [
+        {"name": "audit-classification-categories", "description": "Usa o propone categorías de clasificación para el contenido existente (estrella, promesa, duplicado/zombie o equivalente)"},
+        {"name": "action-plan-prioritized", "description": "El plan de acción está priorizado — indica qué hacer primero, segundo y tercero con justificación"},
+        {"name": "editorial-calendar-table", "description": "Incluye calendario editorial para el contenido nuevo a crear tras la auditoría"},
+        {"name": "jtbd-or-persona", "description": "Usa JTBD (Jobs to Be Done) o buyer persona para identificar gaps de contenido"}
+      ]
+    },
+    {
+      "id": 6,
+      "skill": "social-media-manager",
+      "eval_name": "social-media-launch-campaign",
+      "prompt": "Voy a lanzar mi herramienta SaaS de gestión de proyectos el próximo martes. ¿Cómo planifico la campaña de lanzamiento en LinkedIn y Twitter para los 7 días anteriores al lanzamiento, y el día del lanzamiento?",
+      "assertions": [
+        {"name": "day-by-day-structure", "description": "Estructura la campaña con contenido específico por día (D-7, D-5, D-3, D-1, D0) — no solo temas generales"},
+        {"name": "platform-specific-content", "description": "El contenido de LinkedIn es diferente al de Twitter en formato y tono — no es el mismo texto en ambas plataformas"},
+        {"name": "hook-formula-identified", "description": "El primer post de la campaña usa una fórmula de hook identificable (contradicción, número, pregunta, resultado específico)"},
+        {"name": "og-image-mentioned", "description": "Menciona o implementa Open Graph image con next/og para que el link del lanzamiento se vea bien al compartirse"}
+      ]
+    },
+    {
+      "id": 7,
+      "skill": "social-media-manager",
+      "eval_name": "social-media-repurposing",
+      "prompt": "Tengo un artículo de 2000 palabras sobre cómo mejorar la productividad trabajando desde casa. ¿Cómo lo convierto en contenido para Twitter, LinkedIn e Instagram? Dame el contenido listo para publicar.",
+      "assertions": [
+        {"name": "repurposing-matrix", "description": "Muestra explícitamente la transformación del artículo en múltiples formatos (tabla o lista clara de qué sale de qué)"},
+        {"name": "platform-specific-content", "description": "Twitter (hilo), LinkedIn (post largo) e Instagram (carrusel/caption) tienen formatos y tonos diferentes"},
+        {"name": "hook-formula-in-each", "description": "Cada pieza empieza con un hook diferente adaptado a la plataforma"},
+        {"name": "utm-parameters", "description": "Menciona o muestra UTM parameters para trackear el tráfico desde cada plataforma social"}
+      ]
+    },
+    {
+      "id": 8,
+      "skill": "translator",
+      "eval_name": "translator-nextintl-setup",
+      "prompt": "Quiero añadir inglés y español a mi web en Next.js 15 App Router con next-intl. No tengo nada configurado aún. ¿Cuáles son todos los archivos que necesito crear y cómo los configuro?",
+      "assertions": [
+        {"name": "defineRouting-used", "description": "Usa defineRouting de next-intl/routing en routing.ts — no solo exporta un array de locales"},
+        {"name": "createMiddleware-used", "description": "El middleware.ts usa createMiddleware de next-intl/middleware (no código de detección de locale manual)"},
+        {"name": "createNavigation-for-link", "description": "Crea navigation.ts con createNavigation y explica usar ese Link en lugar del de Next.js"},
+        {"name": "nextintlclientprovider-in-locale-layout", "description": "NextIntlClientProvider se coloca en app/[locale]/layout.tsx con getMessages()"},
+        {"name": "server-vs-client-distinction", "description": "Diferencia explícitamente getTranslations() (Server Components) vs useTranslations() (Client Components)"}
+      ]
+    },
+    {
+      "id": 9,
+      "skill": "translator",
+      "eval_name": "translator-plurals-variables",
+      "prompt": "En mi web con next-intl tengo textos con plurales y variables: 'Tienes 3 artículos en el carrito' (plural), 'Bienvenido, Juan' (variable), y 'Al registrarte aceptas los Términos de servicio' (con enlace). ¿Cómo manejo estos casos correctamente?",
+      "assertions": [
+        {"name": "icu-plural-format", "description": "Usa formato ICU completo para plurales: {count, plural, one {# artículo} other {# artículos}} en el JSON de mensajes"},
+        {"name": "interpolation-variables", "description": "Muestra interpolación de variables con {name} en el JSON y t('key', { name: 'Juan' }) en el componente"},
+        {"name": "zero-case-handled", "description": "Maneja el caso =0 en plurales (carrito vacío, sin resultados) — no solo one/other"},
+        {"name": "rich-text-t-rich", "description": "Para el texto con enlace usa t.rich() con función de render del tag — no concatena strings ni usa dangerouslySetInnerHTML"}
+      ]
+    }
+  ]
+}

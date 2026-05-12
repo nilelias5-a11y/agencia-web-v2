@@ -1,0 +1,29 @@
+{
+  "eval_id": 3,
+  "configuration": "without_skill",
+  "assertions": [
+    {
+      "text": "recipe-json-ld",
+      "passed": true,
+      "evidence": "'@type': 'Recipe' in RecipeJsonLd component with recipeIngredient, recipeInstructions, aggregateRating. Proper schema.org/Recipe implementation."
+    },
+    {
+      "text": "sitemap-in-app-folder",
+      "passed": true,
+      "evidence": "app/sitemap.ts with 'import { MetadataRoute } from \"next\"'. Correct location and API."
+    },
+    {
+      "text": "dynamic-sitemap-async",
+      "passed": true,
+      "evidence": "'export default async function sitemap(): Promise<MetadataRoute.Sitemap>' reads from getAllRecipes() async call."
+    },
+    {
+      "text": "og-image-implementation",
+      "passed": false,
+      "evidence": "No opengraph-image.tsx file. OG image is passed as a static URL in generateMetadata: images: [{ url: recipe.image, width: 1200, height: 630 }]. No ImageResponse or next/og usage."
+    }
+  ],
+  "score": 3,
+  "total": 4,
+  "pass_rate": 0.75
+}

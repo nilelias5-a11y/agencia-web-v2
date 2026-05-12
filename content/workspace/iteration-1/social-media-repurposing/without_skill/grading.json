@@ -1,0 +1,29 @@
+{
+  "eval_id": 7,
+  "configuration": "without_skill",
+  "assertions": [
+    {
+      "text": "repurposing-matrix",
+      "passed": false,
+      "evidence": "No explicit matrix table showing the transformation. Goes directly into platform content. 'RESUMEN ESTRATÉGICO DE PUBLICACIÓN' at end is a publishing schedule, not a transformation matrix."
+    },
+    {
+      "text": "platform-specific-content",
+      "passed": true,
+      "evidence": "Twitter: 9-tweet hilo; LinkedIn: structured long post; Instagram: carrusel + Reel option. Distinct formats and tones per platform."
+    },
+    {
+      "text": "hook-formula-in-each",
+      "passed": true,
+      "evidence": "Twitter: humor hook ('hasta que llevas 3 semanas sin ducharte'); LinkedIn: experience hook ('Llevo 4 años trabajando desde casa'); Instagram: curiosity hook ('El último es el que nadie te cuenta'). Different per platform."
+    },
+    {
+      "text": "utm-parameters",
+      "passed": false,
+      "evidence": "No UTM parameters anywhere. LinkedIn note says to add link in first comment but no UTM tracking. Twitter section has no link at all. Instagram has 'link de la bio' with no UTM."
+    }
+  ],
+  "score": 2,
+  "total": 4,
+  "pass_rate": 0.5
+}

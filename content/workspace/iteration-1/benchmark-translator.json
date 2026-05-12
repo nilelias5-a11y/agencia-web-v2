@@ -1,0 +1,75 @@
+{
+  "skill_name": "translator",
+  "iteration": 1,
+  "generated_at": "2026-05-12",
+  "configurations": [
+    {
+      "name": "with_skill",
+      "evals": [
+        {
+          "eval_id": 8,
+          "eval_name": "translator-nextintl-setup",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "duration_seconds": 80.9,
+          "total_tokens": 21941
+        },
+        {
+          "eval_id": 9,
+          "eval_name": "translator-plurals-variables",
+          "pass_rate": 1.0,
+          "passed": 4,
+          "total": 4,
+          "duration_seconds": 58.9,
+          "total_tokens": 21102
+        }
+      ],
+      "aggregate": {
+        "pass_rate": 1.0,
+        "mean_duration_seconds": 69.9,
+        "mean_tokens": 21522
+      }
+    },
+    {
+      "name": "without_skill",
+      "evals": [
+        {
+          "eval_id": 8,
+          "eval_name": "translator-nextintl-setup",
+          "pass_rate": 0.8,
+          "passed": 4,
+          "total": 5,
+          "duration_seconds": 48.5,
+          "total_tokens": 16425
+        },
+        {
+          "eval_id": 9,
+          "eval_name": "translator-plurals-variables",
+          "pass_rate": 1.0,
+          "passed": 4,
+          "total": 4,
+          "duration_seconds": 54.8,
+          "total_tokens": 16763
+        }
+      ],
+      "aggregate": {
+        "pass_rate": 0.889,
+        "mean_duration_seconds": 51.7,
+        "mean_tokens": 16594
+      }
+    }
+  ],
+  "delta": {
+    "pass_rate": 0.111,
+    "pass_rate_percent": "+11.1%",
+    "description": "with_skill 100% vs without_skill 88.9% — delta from setup eval only: baseline used useTranslations in a Server Component, confusing server/client distinction"
+  },
+  "analyst_notes": [
+    "translator-nextintl-setup: WITH wins on server-vs-client-distinction. Baseline page.tsx used useTranslations (client hook) in a Server Component — this is technically incorrect but went unnoticed without the skill's explicit guidance.",
+    "translator-plurals-variables: TIED 4/4. ICU format, =0 case, interpolation, t.rich() are all within baseline knowledge for next-intl. No skill advantage here.",
+    "The server-vs-client distinction is the key gap: baseline knows the APIs but doesn't always apply them to the right context. The skill's explicit table and rule makes this reliable.",
+    "Consider harder assertions for iteration-2: global.d.ts type safety, generateStaticParams in [locale]/layout, hreflang in generateMetadata alternates.",
+    "Baseline is faster (51.7s vs 69.9s) because skill adds more documentation and tables. The quality improvement is real but narrow on current assertions."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "eval_id": 2,
+  "configuration": "with_skill",
+  "assertions": [
+    {
+      "text": "generatemeta-not-head",
+      "passed": true,
+      "evidence": "Uses 'export const metadata: Metadata' (static) and explains when to use 'export async function generateMetadata()' for dynamic pages. App Router API throughout."
+    },
+    {
+      "text": "canonical-url-included",
+      "passed": true,
+      "evidence": "alternates: { canonical: 'https://www.tufontanero.es/fontanero-urgente-madrid' } present in generateMetadata."
+    },
+    {
+      "text": "json-ld-localBusiness-or-article",
+      "passed": true,
+      "evidence": "Two JSON-LD blocks: '@type': 'Plumber' (LocalBusiness subtype) and '@type': 'FAQPage'. Both injected as <script type='application/ld+json'>."
+    },
+    {
+      "text": "intent-analysis",
+      "passed": true,
+      "evidence": "Section '1. Análisis de intención de búsqueda' identifies: Transaccional con urgencia extrema, micro-momentos, format recommendation (landing page, not blog post)."
+    },
+    {
+      "text": "keyword-in-h1-and-intro",
+      "passed": true,
+      "evidence": "H1: 'Fontanero Urgente en Madrid — Disponible 24h...' and keyword 'fontanero urgente en Madrid' in first paragraph."
+    }
+  ],
+  "score": 5,
+  "total": 5,
+  "pass_rate": 1.0
+}

@@ -1,0 +1,29 @@
+{
+  "eval_id": 3,
+  "configuration": "with_skill",
+  "assertions": [
+    {
+      "text": "recipe-json-ld",
+      "passed": true,
+      "evidence": "'@type': 'Recipe' in JSON-LD with all required fields (name, image, recipeIngredient, recipeInstructions). Explicitly notes NOT to use BlogPosting."
+    },
+    {
+      "text": "sitemap-in-app-folder",
+      "passed": true,
+      "evidence": "app/sitemap.ts imports MetadataRoute from 'next'. File placed in app/ directory, generates /sitemap.xml automatically."
+    },
+    {
+      "text": "dynamic-sitemap-async",
+      "passed": true,
+      "evidence": "'export default async function sitemap(): Promise<MetadataRoute.Sitemap>' reads from getAllRecetas() and getAllCategorias() async calls."
+    },
+    {
+      "text": "og-image-implementation",
+      "passed": true,
+      "evidence": "Full app/recetas/[slug]/opengraph-image.tsx with ImageResponse from 'next/og'. Includes size exports, dynamic recipe data, background gradient, category badge."
+    }
+  ],
+  "score": 4,
+  "total": 4,
+  "pass_rate": 1.0
+}

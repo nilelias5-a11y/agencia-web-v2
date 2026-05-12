@@ -1,0 +1,29 @@
+{
+  "eval_id": 9,
+  "configuration": "without_skill",
+  "assertions": [
+    {
+      "text": "icu-plural-format",
+      "passed": true,
+      "evidence": "'{count, plural, =0 {No tienes articulos en el carrito} one {Tienes # articulo en el carrito} other {Tienes # articulos en el carrito}}'. Full ICU format with all cases."
+    },
+    {
+      "text": "interpolation-variables",
+      "passed": true,
+      "evidence": "'greeting': 'Bienvenido, {name}' in JSON and 't(\"greeting\", { name: userName })' in component usage."
+    },
+    {
+      "text": "zero-case-handled",
+      "passed": true,
+      "evidence": "'=0 {No tienes articulos en el carrito}' in the plural string. Spanish and English versions both show the =0 case."
+    },
+    {
+      "text": "rich-text-t-rich",
+      "passed": true,
+      "evidence": "t.rich('termsAgreement', { termsLink: (chunks) => <Link href=\"/terminos\">{chunks}</Link> }). Both Client and Server Component examples shown."
+    }
+  ],
+  "score": 4,
+  "total": 4,
+  "pass_rate": 1.0
+}

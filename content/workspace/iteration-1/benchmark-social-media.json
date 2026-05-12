@@ -1,0 +1,75 @@
+{
+  "skill_name": "social-media-manager",
+  "iteration": 1,
+  "generated_at": "2026-05-12",
+  "configurations": [
+    {
+      "name": "with_skill",
+      "evals": [
+        {
+          "eval_id": 6,
+          "eval_name": "social-media-launch-campaign",
+          "pass_rate": 1.0,
+          "passed": 4,
+          "total": 4,
+          "duration_seconds": 116.3,
+          "total_tokens": 23487
+        },
+        {
+          "eval_id": 7,
+          "eval_name": "social-media-repurposing",
+          "pass_rate": 1.0,
+          "passed": 4,
+          "total": 4,
+          "duration_seconds": 102.2,
+          "total_tokens": 21636
+        }
+      ],
+      "aggregate": {
+        "pass_rate": 1.0,
+        "mean_duration_seconds": 109.3,
+        "mean_tokens": 22562
+      }
+    },
+    {
+      "name": "without_skill",
+      "evals": [
+        {
+          "eval_id": 6,
+          "eval_name": "social-media-launch-campaign",
+          "pass_rate": 0.75,
+          "passed": 3,
+          "total": 4,
+          "duration_seconds": 153.1,
+          "total_tokens": 20745
+        },
+        {
+          "eval_id": 7,
+          "eval_name": "social-media-repurposing",
+          "pass_rate": 0.5,
+          "passed": 2,
+          "total": 4,
+          "duration_seconds": 89.6,
+          "total_tokens": 17509
+        }
+      ],
+      "aggregate": {
+        "pass_rate": 0.625,
+        "mean_duration_seconds": 121.4,
+        "mean_tokens": 19127
+      }
+    }
+  ],
+  "delta": {
+    "pass_rate": 0.375,
+    "pass_rate_percent": "+37.5%",
+    "description": "with_skill 100% vs without_skill 62.5% — differentiators: opengraph-image.tsx with ImageResponse (launch) and UTM parameters table (repurposing)"
+  },
+  "analyst_notes": [
+    "social-media-launch-campaign: Baseline scored 3/4 — only missed og-image-mentioned. Baseline produces solid day-by-day campaigns with hook formulas; skill adds the Next.js OG image code.",
+    "social-media-repurposing: Baseline scored 2/4 — missed repurposing-matrix table and UTM parameters. Baseline produces platform-specific content with different hooks but doesn't show the transformation matrix or track UTMs.",
+    "UTM parameters is a strong discriminator: baseline never adds them; skill always does.",
+    "Repurposing matrix (explicit table) is also discriminating: baseline goes directly to content without a meta-view of the transformation.",
+    "Noteworthy: without_skill took LONGER (153.1s vs 116.3s) on launch campaign despite missing features — the longer output didn't translate to higher quality on the tested dimensions."
+  ]
+}

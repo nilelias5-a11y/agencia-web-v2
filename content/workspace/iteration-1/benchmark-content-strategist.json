@@ -1,0 +1,75 @@
+{
+  "skill_name": "content-strategist",
+  "iteration": 1,
+  "generated_at": "2026-05-12",
+  "configurations": [
+    {
+      "name": "with_skill",
+      "evals": [
+        {
+          "eval_id": 4,
+          "eval_name": "content-strategist-saas-launch",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "duration_seconds": 116.8,
+          "total_tokens": 22893
+        },
+        {
+          "eval_id": 5,
+          "eval_name": "content-strategist-content-audit",
+          "pass_rate": 1.0,
+          "passed": 4,
+          "total": 4,
+          "duration_seconds": 123.1,
+          "total_tokens": 21530
+        }
+      ],
+      "aggregate": {
+        "pass_rate": 1.0,
+        "mean_duration_seconds": 120.0,
+        "mean_tokens": 22212
+      }
+    },
+    {
+      "name": "without_skill",
+      "evals": [
+        {
+          "eval_id": 4,
+          "eval_name": "content-strategist-saas-launch",
+          "pass_rate": 0.4,
+          "passed": 2,
+          "total": 5,
+          "duration_seconds": 97.9,
+          "total_tokens": 18377
+        },
+        {
+          "eval_id": 5,
+          "eval_name": "content-strategist-content-audit",
+          "pass_rate": 0.5,
+          "passed": 2,
+          "total": 4,
+          "duration_seconds": 103.9,
+          "total_tokens": 17792
+        }
+      ],
+      "aggregate": {
+        "pass_rate": 0.444,
+        "mean_duration_seconds": 100.9,
+        "mean_tokens": 18085
+      }
+    }
+  ],
+  "delta": {
+    "pass_rate": 0.556,
+    "pass_rate_percent": "+55.6%",
+    "description": "with_skill 100% vs without_skill 44.4% — largest delta of all 5 skills. Baseline lacks: pillar-cluster model, TOFU/MOFU/BOFU percentages, quick-wins with expected results, JTBD framework, editorial calendar table."
+  },
+  "analyst_notes": [
+    "content-strategist-saas-launch: Baseline scored 2/5 — missed pillar-cluster, TOFU/MOFU/BOFU distribution, and quick-wins. These require specific frameworks baseline doesn't apply by default.",
+    "content-strategist-content-audit: Baseline scored 2/4 — missed editorial-calendar-table and JTBD framework. It used different (but valid) classification categories, so audit-classification passed.",
+    "The JTBD assertion is the strongest discriminator: baseline never applied it; skill always did.",
+    "Pillar-cluster architecture is equally discriminating: baseline tends to organize by month/topic, not by pillar+cluster model.",
+    "content-strategist has the highest delta of all skills — indicates genuine expertise injection beyond baseline Claude behavior."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "eval_id": 1,
+  "configuration": "with_skill",
+  "assertions": [
+    {
+      "text": "copy-in-nextintl-format",
+      "passed": true,
+      "evidence": "Full messages/es.json block under '## Bloque JSON' with ProductPage.blendEtiopiaBrasil.* keys, tasteNotes, reasons, ctaPrimary, ctaSecondary."
+    },
+    {
+      "text": "sensory-language",
+      "passed": true,
+      "evidence": "'viveza frutal de Etiopía', 'cuerpo redondo y achocolatado', 'notas de fruta roja madura — frambuesa, cereza', 'postgusto de chocolate negro suave. Sin amargor agresivo.'."
+    },
+    {
+      "text": "benefit-over-feature",
+      "passed": true,
+      "evidence": "Framed as experience ('cada sorbo abre con...', 'edición de temporada — cuando se acabe, se acaba') plus 'Por qué este blend, por qué ahora' section with benefits."
+    },
+    {
+      "text": "cta-product",
+      "passed": true,
+      "evidence": "'CTA primario: Añadir al carrito' and 'CTA secundario: Ver cómo lo tostamos'. Specific, e-commerce-appropriate CTAs."
+    }
+  ],
+  "score": 4,
+  "total": 4,
+  "pass_rate": 1.0
+}

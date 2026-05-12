@@ -1,0 +1,34 @@
+{
+  "eval_id": 0,
+  "configuration": "without_skill",
+  "assertions": [
+    {
+      "text": "copy-in-nextintl-format",
+      "passed": false,
+      "evidence": "Response delivers plain markdown text. No JSON structure, no messages/es.json block, not compatible with next-intl."
+    },
+    {
+      "text": "pas-formula-or-structure",
+      "passed": true,
+      "evidence": "Hero has a clear value proposition: 'Convertimos tu visión en un producto digital que los usuarios no pueden ignorar.' Although not PAS-labeled, the assertion allows 'estructura equivalente con propuesta de valor clara'."
+    },
+    {
+      "text": "cta-hierarchy",
+      "passed": true,
+      "evidence": "Primary '[Agenda una llamada gratuita]' vs secondary 'O escríbenos directamente a hola@tuagencia.com'. Distinct hierarchy present."
+    },
+    {
+      "text": "tone-defined-first",
+      "passed": false,
+      "evidence": "Tone is mentioned in 'NOTAS DE IMPLEMENTACION' at the END: 'El tono es directo, sin jerga de agencia'. Not defined before writing copy."
+    },
+    {
+      "text": "scannable-structure",
+      "passed": true,
+      "evidence": "Uses bullet lists, H2/H3 subheadings per service card, section dividers."
+    }
+  ],
+  "score": 3,
+  "total": 5,
+  "pass_rate": 0.6
+}

@@ -1,0 +1,13 @@
+{
+  "eval_id": 0,
+  "eval_name": "copywriter-home-agency",
+  "skill": "copywriter",
+  "prompt": "Necesito el copy completo para la home de mi agencia de diseño digital. Los clientes son startups tech. Incluye: hero con propuesta de valor, sección de servicios (diseño, desarrollo web, estrategia digital) y CTA final para agendar llamada.",
+  "assertions": [
+    {"name": "copy-in-nextintl-format", "description": "Entrega el copy en estructura de messages/es.json compatible con next-intl, no solo texto plano"},
+    {"name": "pas-formula-or-structure", "description": "El hero usa fórmula PAS (Problema, Agitación, Solución) o estructura equivalente con propuesta de valor clara"},
+    {"name": "cta-hierarchy", "description": "Diferencia entre CTA primario (alta intención) y CTA secundario (bajo compromiso) — no usa 'Saber más' como CTA principal"},
+    {"name": "tone-defined-first", "description": "Define o declara el tono/voz de marca antes de escribir el copy"},
+    {"name": "scannable-structure", "description": "Usa bullets, subheadings, o estructura F-pattern — el copy es scannable en diagonal"}
+  ]
+}

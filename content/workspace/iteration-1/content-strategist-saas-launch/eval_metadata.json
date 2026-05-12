@@ -1,0 +1,13 @@
+{
+  "eval_id": 4,
+  "eval_name": "content-strategist-saas-launch",
+  "skill": "content-strategist",
+  "prompt": "Acabo de lanzar una SaaS de gestión de facturas para autónomos en España. No tengo nada de contenido publicado. ¿Por dónde empiezo y qué publico los primeros 3 meses para generar tráfico orgánico y leads?",
+  "assertions": [
+    {"name": "pillar-cluster-model", "description": "Propone el modelo pillar page + cluster content — no una lista plana de artículos sin arquitectura"},
+    {"name": "tofu-mofu-bofu-distribution", "description": "Distribuye el contenido en TOFU/MOFU/BOFU con proporciones o porcentajes justificados"},
+    {"name": "editorial-calendar-table", "description": "Entrega el calendario en formato tabla con columnas (semana/fecha, título, nivel embudo, canal)"},
+    {"name": "quick-wins", "description": "Incluye 2-3 quick wins con resultado esperado en menos de 30 días"},
+    {"name": "kpis-defined", "description": "Define KPIs específicos de seguimiento (no solo 'medir el tráfico')"}
+  ]
+}

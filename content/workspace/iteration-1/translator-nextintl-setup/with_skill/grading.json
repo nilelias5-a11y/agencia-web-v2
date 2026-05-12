@@ -1,0 +1,34 @@
+{
+  "eval_id": 8,
+  "configuration": "with_skill",
+  "assertions": [
+    {
+      "text": "defineRouting-used",
+      "passed": true,
+      "evidence": "src/i18n/routing.ts uses 'import { defineRouting } from \"next-intl/routing\"' and exports the routing object. Documented as 'la fuente de verdad de toda la configuración'."
+    },
+    {
+      "text": "createMiddleware-used",
+      "passed": true,
+      "evidence": "middleware.ts uses 'import createMiddleware from \"next-intl/middleware\"' and 'export default createMiddleware(routing)'."
+    },
+    {
+      "text": "createNavigation-for-link",
+      "passed": true,
+      "evidence": "src/i18n/navigation.ts uses createNavigation(routing). Explicit table showing 'import { Link } from \"@/i18n/navigation\"' vs NOT using 'next/link'. Warning: 'si usas el de Next.js, los enlaces no tendrán locale'."
+    },
+    {
+      "text": "nextintlclientprovider-in-locale-layout",
+      "passed": true,
+      "evidence": "app/[locale]/layout.tsx has NextIntlClientProvider wrapping children with messages from getMessages(). Explains why getMessages() instead of direct JSON load."
+    },
+    {
+      "text": "server-vs-client-distinction",
+      "passed": true,
+      "evidence": "Full comparison table: getTranslations() (Server Component, async, from 'next-intl/server') vs useTranslations() (Client Component, sync, from 'next-intl'). Rule: 'por defecto, usa getTranslations() en Server Components'."
+    }
+  ],
+  "score": 5,
+  "total": 5,
+  "pass_rate": 1.0
+}

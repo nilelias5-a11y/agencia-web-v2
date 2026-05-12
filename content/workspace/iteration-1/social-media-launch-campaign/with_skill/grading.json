@@ -1,0 +1,29 @@
+{
+  "eval_id": 6,
+  "configuration": "with_skill",
+  "assertions": [
+    {
+      "text": "day-by-day-structure",
+      "passed": true,
+      "evidence": "Calendar overview table + dedicated sections for D-7, D-5, D-3, D-1, D0 with specific content for each day."
+    },
+    {
+      "text": "platform-specific-content",
+      "passed": true,
+      "evidence": "LinkedIn uses long-form reflective posts ('post reflexivo'), Twitter uses shorter hilos. Explicit format notes per platform."
+    },
+    {
+      "text": "hook-formula-identified",
+      "passed": true,
+      "evidence": "D-7 LinkedIn labeled '(formato: post reflexivo con hook de contradicción)'. D-7 Twitter labeled '(hilo 3 tweets — hook de número)'. Hook formulas explicitly named."
+    },
+    {
+      "text": "og-image-mentioned",
+      "passed": true,
+      "evidence": "Full app/launch/opengraph-image.tsx implementation with ImageResponse from 'next/og', size exports (1200×630), launch badge, product name, and CTA text."
+    }
+  ],
+  "score": 4,
+  "total": 4,
+  "pass_rate": 1.0
+}

@@ -1,0 +1,12 @@
+{
+  "eval_id": 9,
+  "eval_name": "translator-plurals-variables",
+  "skill": "translator",
+  "prompt": "En mi web con next-intl tengo textos con plurales y variables: 'Tienes 3 artículos en el carrito' (plural), 'Bienvenido, Juan' (variable), y 'Al registrarte aceptas los Términos de servicio' (con enlace). ¿Cómo manejo estos casos correctamente?",
+  "assertions": [
+    {"name": "icu-plural-format", "description": "Usa formato ICU completo para plurales: {count, plural, one {# artículo} other {# artículos}} en el JSON de mensajes"},
+    {"name": "interpolation-variables", "description": "Muestra interpolación de variables con {name} en el JSON y t('key', { name: 'Juan' }) en el componente"},
+    {"name": "zero-case-handled", "description": "Maneja el caso =0 en plurales (carrito vacío, sin resultados)"},
+    {"name": "rich-text-t-rich", "description": "Para el texto con enlace usa t.rich() con función de render del tag — no concatena strings"}
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "eval_id": 4,
+  "configuration": "without_skill",
+  "assertions": [
+    {
+      "text": "pillar-cluster-model",
+      "passed": false,
+      "evidence": "No pillar-cluster architecture. Content organized as flat monthly lists. Pillar concept mentioned briefly in 'Estructura del blog' as 'categorías del blog' (not pillar architecture). Topic clusters mentioned late in Mes 3 as categories, not as a top-level strategy."
+    },
+    {
+      "text": "tofu-mofu-bofu-distribution",
+      "passed": false,
+      "evidence": "Uses 'intención informacional / comparativa / transaccional' clusters but no TOFU/MOFU/BOFU labels with distribution percentages. No explicit funnel distribution strategy."
+    },
+    {
+      "text": "editorial-calendar-table",
+      "passed": true,
+      "evidence": "Tables with '# | Título | Keyword principal | Tipo | CTA' for each month (3 tables × 8 articles). Column structure present though missing 'Canal' column."
+    },
+    {
+      "text": "quick-wins",
+      "passed": false,
+      "evidence": "'Resumen ejecutivo: qué hacer esta semana' at the end has 5 action items but no 'quick wins' framing with expected results in less than 30 days."
+    },
+    {
+      "text": "kpis-defined",
+      "passed": true,
+      "evidence": "KPIs defined: 'Tráfico orgánico: Mes 1: 200-500 visitas/mes', 'Leads captados: 200-500 suscriptores', 'Posicionamiento: 5-10 keywords en posición 10-30', 'Registros en la SaaS: 20-50'. Specific and measurable."
+    }
+  ],
+  "score": 2,
+  "total": 5,
+  "pass_rate": 0.4
+}

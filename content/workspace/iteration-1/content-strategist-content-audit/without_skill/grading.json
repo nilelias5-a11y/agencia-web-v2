@@ -1,0 +1,29 @@
+{
+  "eval_id": 5,
+  "configuration": "without_skill",
+  "assertions": [
+    {
+      "text": "audit-classification-categories",
+      "passed": true,
+      "evidence": "Section '2.1 Clasificación de artículos en 4 categorías': MANTENER, OPTIMIZAR, FUSIONAR, ELIMINAR O REDIRIGIR. Assertion allows 'equivalente' categories. These serve the same purpose as Estrella/Promesa/Duplicado/Zombie."
+    },
+    {
+      "text": "action-plan-prioritized",
+      "passed": true,
+      "evidence": "'RESUMEN EJECUTIVO: PRIORIDADES POR SEMANA' table with Semana 1, 2, 3-4, 5-6, 7-8, 9-10 ordered actions. Also phases FASE 1-5 provide ordered sequence."
+    },
+    {
+      "text": "editorial-calendar-table",
+      "passed": false,
+      "evidence": "No calendar table for new content. Section 4.2 says 'establece una cadencia realista: 2-4 artículos nuevos por mes' and gives 3 priorities, but no actual calendar table with weeks/titles/keywords."
+    },
+    {
+      "text": "jtbd-or-persona",
+      "passed": false,
+      "evidence": "No JTBD framework and no buyer persona development. Section 2.2 mentions gap analysis via keyword tools and competitor analysis, but not JTBD or personas."
+    }
+  ],
+  "score": 2,
+  "total": 4,
+  "pass_rate": 0.5
+}

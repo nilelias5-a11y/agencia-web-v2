@@ -1,0 +1,12 @@
+{
+  "eval_id": 5,
+  "eval_name": "content-strategist-content-audit",
+  "skill": "content-strategist",
+  "prompt": "Mi e-commerce de ropa sostenible lleva 2 años y tiene 30 artículos en el blog pero casi cero tráfico orgánico. ¿Cómo hago una auditoría de contenido y qué hago con lo que encuentre?",
+  "assertions": [
+    {"name": "audit-classification-categories", "description": "Usa o propone categorías de clasificación para el contenido existente (estrella, promesa, duplicado/zombie o equivalente)"},
+    {"name": "action-plan-prioritized", "description": "El plan de acción está priorizado — indica qué hacer primero, segundo y tercero con justificación"},
+    {"name": "editorial-calendar-table", "description": "Incluye calendario editorial para el contenido nuevo a crear tras la auditoría"},
+    {"name": "jtbd-or-persona", "description": "Usa JTBD (Jobs to Be Done) o buyer persona para identificar gaps de contenido"}
+  ]
+}

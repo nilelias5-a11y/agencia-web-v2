@@ -1,0 +1,29 @@
+{
+  "eval_id": 7,
+  "configuration": "with_skill",
+  "assertions": [
+    {
+      "text": "repurposing-matrix",
+      "passed": true,
+      "evidence": "Section '1. Matriz de repurposing' with explicit table: Contenido base | Plataforma | Formato | Objetivo for all 3 platforms."
+    },
+    {
+      "text": "platform-specific-content",
+      "passed": true,
+      "evidence": "Twitter: 8-tweet hilo; LinkedIn: long reflective post (link in comment); Instagram: 7-slide carrusel. Each has different structure, tone, and notes."
+    },
+    {
+      "text": "hook-formula-in-each",
+      "passed": true,
+      "evidence": "Twitter hook labeled 'declaración audaz'; LinkedIn hook is personal failure story; Instagram slide 1 is a provocative quote. Three different hook types."
+    },
+    {
+      "text": "utm-parameters",
+      "passed": true,
+      "evidence": "Section '5. UTM Parameters — Resumen de tracking' with full URLs for Twitter, LinkedIn, Instagram. utm_source, utm_medium, utm_campaign, utm_content all present."
+    }
+  ],
+  "score": 4,
+  "total": 4,
+  "pass_rate": 1.0
+}

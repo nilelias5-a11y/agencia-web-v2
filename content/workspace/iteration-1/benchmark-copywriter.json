@@ -1,0 +1,74 @@
+{
+  "skill_name": "copywriter",
+  "iteration": 1,
+  "generated_at": "2026-05-12",
+  "configurations": [
+    {
+      "name": "with_skill",
+      "evals": [
+        {
+          "eval_id": 0,
+          "eval_name": "copywriter-home-agency",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "duration_seconds": 68.8,
+          "total_tokens": 18712
+        },
+        {
+          "eval_id": 1,
+          "eval_name": "copywriter-product-description",
+          "pass_rate": 1.0,
+          "passed": 4,
+          "total": 4,
+          "duration_seconds": 53.2,
+          "total_tokens": 17833
+        }
+      ],
+      "aggregate": {
+        "pass_rate": 1.0,
+        "mean_duration_seconds": 61.0,
+        "mean_tokens": 18272
+      }
+    },
+    {
+      "name": "without_skill",
+      "evals": [
+        {
+          "eval_id": 0,
+          "eval_name": "copywriter-home-agency",
+          "pass_rate": 0.6,
+          "passed": 3,
+          "total": 5,
+          "duration_seconds": 49.6,
+          "total_tokens": 15258
+        },
+        {
+          "eval_id": 1,
+          "eval_name": "copywriter-product-description",
+          "pass_rate": 0.5,
+          "passed": 2,
+          "total": 4,
+          "duration_seconds": 38.9,
+          "total_tokens": 14755
+        }
+      ],
+      "aggregate": {
+        "pass_rate": 0.556,
+        "mean_duration_seconds": 44.3,
+        "mean_tokens": 15007
+      }
+    }
+  ],
+  "delta": {
+    "pass_rate": 0.444,
+    "pass_rate_percent": "+44.4%",
+    "description": "with_skill scores 100% vs without_skill 55.6% — main differentiator: next-intl JSON output format (baseline delivers plain text, no JSON structure)"
+  },
+  "analyst_notes": [
+    "Both evals show the same pattern: with_skill delivers copy in messages/es.json format; without_skill delivers plain markdown.",
+    "The copy-in-nextintl-format assertion drives the entire delta — it was 0/2 for baseline and 2/2 for skill.",
+    "Other assertions (sensory language, CTA hierarchy, scannable structure) are already met by baseline — skill doesn't add extra value there.",
+    "Consider making assertions harder for non-format dimensions in iteration-2 to expose other skill differentiators."
+  ]
+}

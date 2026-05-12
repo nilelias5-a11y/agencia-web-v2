@@ -1,0 +1,74 @@
+{
+  "skill_name": "seo-writer",
+  "iteration": 1,
+  "generated_at": "2026-05-12",
+  "configurations": [
+    {
+      "name": "with_skill",
+      "evals": [
+        {
+          "eval_id": 2,
+          "eval_name": "seo-writer-local-business",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "duration_seconds": 124.3,
+          "total_tokens": 22587
+        },
+        {
+          "eval_id": 3,
+          "eval_name": "seo-writer-recipe-schema",
+          "pass_rate": 1.0,
+          "passed": 4,
+          "total": 4,
+          "duration_seconds": 103.5,
+          "total_tokens": 23053
+        }
+      ],
+      "aggregate": {
+        "pass_rate": 1.0,
+        "mean_duration_seconds": 113.9,
+        "mean_tokens": 22820
+      }
+    },
+    {
+      "name": "without_skill",
+      "evals": [
+        {
+          "eval_id": 2,
+          "eval_name": "seo-writer-local-business",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "duration_seconds": 100.8,
+          "total_tokens": 19690
+        },
+        {
+          "eval_id": 3,
+          "eval_name": "seo-writer-recipe-schema",
+          "pass_rate": 0.75,
+          "passed": 3,
+          "total": 4,
+          "duration_seconds": 79.5,
+          "total_tokens": 18677
+        }
+      ],
+      "aggregate": {
+        "pass_rate": 0.889,
+        "mean_duration_seconds": 90.2,
+        "mean_tokens": 19184
+      }
+    }
+  ],
+  "delta": {
+    "pass_rate": 0.111,
+    "pass_rate_percent": "+11.1%",
+    "description": "with_skill 100% vs without_skill 88.9% — delta driven entirely by recipe eval: opengraph-image.tsx with ImageResponse (baseline uses static OG URL)"
+  },
+  "analyst_notes": [
+    "seo-writer-local-business: TIED 5/5 — baseline is already very strong for local SEO. All assertions (generateMetadata, canonical, JSON-LD, intent analysis, keyword placement) are within Claude's baseline knowledge.",
+    "seo-writer-recipe-schema: WITH wins on og-image-implementation. Baseline uses a static URL in generateMetadata images; skill produces full opengraph-image.tsx with ImageResponse.",
+    "Consider strengthening local-business assertions for iteration-2: e.g., hreflang for multilingual, robots.ts, opengraph-image for local pages.",
+    "The 11% delta is real but narrow — seo-writer skill has low ROI on the current assertion set. The skill adds most value when explicitly asked for opengraph-image.tsx."
+  ]
+}

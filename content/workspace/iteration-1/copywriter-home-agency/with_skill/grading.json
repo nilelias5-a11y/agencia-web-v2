@@ -1,0 +1,34 @@
+{
+  "eval_id": 0,
+  "configuration": "with_skill",
+  "assertions": [
+    {
+      "text": "copy-in-nextintl-format",
+      "passed": true,
+      "evidence": "Response includes a full messages/es.json block under '## Bloque JSON' with proper next-intl structure (Home.hero.ctaPrimary, Home.services.design.bullet1, etc.)"
+    },
+    {
+      "text": "pas-formula-or-structure",
+      "passed": true,
+      "evidence": "Explicitly labels '> Fórmula PAS aplicada:' with Problema / Agitación / Solución breakdown before the hero copy."
+    },
+    {
+      "text": "cta-hierarchy",
+      "passed": true,
+      "evidence": "Clear distinction: 'CTA primario: Agenda tu llamada gratuita' vs 'CTA secundario: Ver proyectos'. Not 'Saber más'."
+    },
+    {
+      "text": "tone-defined-first",
+      "passed": true,
+      "evidence": "Fase 1 defines tone BEFORE writing copy: 'Tono: Directo, sin palabrería corporativa. Cercano pero profesional.'"
+    },
+    {
+      "text": "scannable-structure",
+      "passed": true,
+      "evidence": "Uses bullet lists, H2/H3 subheadings, and section dividers throughout."
+    }
+  ],
+  "score": 5,
+  "total": 5,
+  "pass_rate": 1.0
+}

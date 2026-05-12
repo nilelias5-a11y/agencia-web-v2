@@ -1,0 +1,29 @@
+{
+  "eval_id": 9,
+  "configuration": "with_skill",
+  "assertions": [
+    {
+      "text": "icu-plural-format",
+      "passed": true,
+      "evidence": "'{count, plural, =0 {Tu carrito está vacío} one {Tienes # artículo en el carrito} other {Tienes # artículos en el carrito}}' in messages/es.json. Full ICU format."
+    },
+    {
+      "text": "interpolation-variables",
+      "passed": true,
+      "evidence": "'welcome': 'Bienvenido, {name}' in JSON and 't(\"welcome\", { name: userName })' in component examples for both Server and Client Components."
+    },
+    {
+      "text": "zero-case-handled",
+      "passed": true,
+      "evidence": "'=0 {Tu carrito está vacío}' explicitly in the plural string. Also explains: 'El caso =0 es opcional en la especificación ICU pero muy recomendado para UX'."
+    },
+    {
+      "text": "rich-text-t-rich",
+      "passed": true,
+      "evidence": "t.rich('registerTerms', { link: (chunks) => <Link href=\"/terms\" className=\"underline text-blue-600\">{chunks}</Link> }). With XSS safety explanation."
+    }
+  ],
+  "score": 4,
+  "total": 4,
+  "pass_rate": 1.0
+}

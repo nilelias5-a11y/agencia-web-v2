@@ -1,0 +1,13 @@
+{
+  "eval_id": 8,
+  "eval_name": "translator-nextintl-setup",
+  "skill": "translator",
+  "prompt": "Quiero añadir inglés y español a mi web en Next.js 15 App Router con next-intl. No tengo nada configurado aún. ¿Cuáles son todos los archivos que necesito crear y cómo los configuro?",
+  "assertions": [
+    {"name": "defineRouting-used", "description": "Usa defineRouting de next-intl/routing en routing.ts — no solo exporta un array de locales"},
+    {"name": "createMiddleware-used", "description": "El middleware.ts usa createMiddleware de next-intl/middleware (no código de detección de locale manual)"},
+    {"name": "createNavigation-for-link", "description": "Crea navigation.ts con createNavigation y explica usar ese Link en lugar del de Next.js"},
+    {"name": "nextintlclientprovider-in-locale-layout", "description": "NextIntlClientProvider se coloca en app/[locale]/layout.tsx con getMessages()"},
+    {"name": "server-vs-client-distinction", "description": "Diferencia explícitamente getTranslations() (Server Components) vs useTranslations() (Client Components)"}
+  ]
+}

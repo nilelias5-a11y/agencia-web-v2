@@ -1,0 +1,34 @@
+{
+  "eval_id": 4,
+  "configuration": "with_skill",
+  "assertions": [
+    {
+      "text": "pillar-cluster-model",
+      "passed": true,
+      "evidence": "Section '2. Mapa de Pilares y Clusters' with 3 pillar pages (facturación, IVA, gastos deducibles) each with cluster articles table."
+    },
+    {
+      "text": "tofu-mofu-bofu-distribution",
+      "passed": true,
+      "evidence": "Explicit: 'Distribución recomendada para los primeros 3 meses: 65% TOFU / 25% MOFU / 10% BOFU' with full justification and table showing ~16/~6/~3 pieces."
+    },
+    {
+      "text": "editorial-calendar-table",
+      "passed": true,
+      "evidence": "Table with columns 'Semana | Título | Nivel embudo | Keyword principal | Canal' covering 24 articles over 12 weeks."
+    },
+    {
+      "text": "quick-wins",
+      "passed": true,
+      "evidence": "3 Quick Wins: LinkedIn post (200-500 visitas en 30 días), plantilla descargable (80-200 leads), newsletter appearance (50-150 visitas). Each with expected result."
+    },
+    {
+      "text": "kpis-defined",
+      "passed": true,
+      "evidence": "KPI tables per month: Mes 1 (visitas orgánicas, tráfico referencia, leads, URLs indexadas), Mes 2 (sesiones/semana, posición media, CTR, tiempo en página, tasa de conversión), Mes 3 (keywords top 20, leads orgánicos)."
+    }
+  ],
+  "score": 5,
+  "total": 5,
+  "pass_rate": 1.0
+}

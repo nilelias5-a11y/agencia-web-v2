@@ -1,0 +1,57 @@
+{
+  "skill_name": "caching-specialist",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "La Nonna es un sitio de restaurante con 17 páginas 100% estáticas (SSG) en Next.js 15. No tiene CMS ni base de datos — el contenido está hardcodeado en archivos JSON de traducciones (next-intl). Voy a deployer en Vercel. No hago ningún fetch() en el servidor, todas las páginas se generan en build time. ¿Necesito configurar algo específico de caché o el comportamiento por defecto de Next.js 15 + Vercel ya es óptimo para este caso?",
+      "expected_output": "Explicación clara de que para SSG puro Vercel ya sirve desde CDN automáticamente, qué headers de caché aplica Vercel por defecto, y si hay algo opcional a configurar.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "confirms-no-config-needed",
+          "description": "Response clearly states that no manual cache configuration is needed for a purely static SSG site on Vercel"
+        },
+        {
+          "name": "explains-vercel-cdn-behavior",
+          "description": "Response explains how Vercel automatically serves static files from its Edge Network / CDN"
+        },
+        {
+          "name": "mentions-cache-control-headers",
+          "description": "Response mentions what Cache-Control headers Vercel sets for SSG pages (e.g., public, max-age, s-maxage)"
+        },
+        {
+          "name": "avoids-unnecessary-complexity",
+          "description": "Response does NOT recommend adding fetch caching, unstable_cache, or ISR as required steps for a purely static site with no data fetching"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Quiero añadir a La Nonna una sección 'Eventos del mes' que se actualice desde un admin panel básico (formulario en Next.js que guarda en una base de datos Postgres via Prisma). Los eventos cambian máximo 2-3 veces por semana. La web pública está en Next.js 15 en Vercel. Necesito que cuando el admin guarde un evento, la página pública se actualice en menos de 1 minuto sin hacer un redeploy completo. ¿Cómo estructuro la caché?",
+      "expected_output": "Arquitectura completa: unstable_cache con tags para la query de Prisma, revalidateTag en el server action del admin, ISR con revalidate alto como fallback, y código funcional para cada capa.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "includes-unstable-cache-with-tags",
+          "description": "Response includes `unstable_cache` wrapping the Prisma query with cache tags (e.g., ['eventos'])"
+        },
+        {
+          "name": "includes-revalidateTag-in-server-action",
+          "description": "Response shows `revalidateTag` called in the server action (or equivalent mutation handler) after saving an event"
+        },
+        {
+          "name": "meets-one-minute-freshness",
+          "description": "The proposed solution can achieve data freshness in < 1 minute without a full redeploy (via on-demand revalidation)"
+        },
+        {
+          "name": "includes-working-prisma-code",
+          "description": "Response includes actual Prisma query code (findMany or similar) wrapped in unstable_cache"
+        },
+        {
+          "name": "explains-tradeoffs",
+          "description": "Response explains the tradeoffs of the chosen caching approach (e.g., what happens between revalidations)"
+        }
+      ]
+    }
+  ]
+}

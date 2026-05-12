@@ -1,0 +1,61 @@
+{
+  "skill_name": "core-web-vitals-specialist",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Google Search Console me muestra que la homepage de La Nonna tiene CLS 0.21 en móvil (categoría Poor, umbral ≤ 0.1). La página tiene: hero con imagen Unsplash full-width (fill + priority, sin sizes explícito), sección TrustBar con iconos SVG inline, MenuHighlight con 3 imágenes de platos (width/height hardcoded en el componente), ReviewsSection con avatar de texto, y Header con logo de texto. Las fuentes Playfair Display y Lato se cargan con next/font y display swap. ¿Qué está causando el layout shift y cómo lo diagnostico y arreglo?",
+      "expected_output": "Identificación de las causas probables de CLS (font swap + imágenes sin sizes explícito en fill mode), fixes concretos con código (adjustFontFallback, sizes prop), y cómo verificar la mejora.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "identifies-font-swap-cls",
+          "description": "Response identifies font swap (Playfair Display and/or Lato with display:swap) as a likely CLS contributor"
+        },
+        {
+          "name": "mentions-adjustFontFallback",
+          "description": "Response recommends `adjustFontFallback: true` in the next/font configuration"
+        },
+        {
+          "name": "identifies-fill-image-without-sizes",
+          "description": "Response identifies the hero image using fill mode without explicit sizes as a potential CLS source"
+        },
+        {
+          "name": "provides-devtools-diagnosis-method",
+          "description": "Response explains how to identify layout shifts using Chrome DevTools Performance panel or similar tool"
+        },
+        {
+          "name": "includes-verification-method",
+          "description": "Response explains how to measure/verify CLS improvement after applying fixes"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "El LCP de La Nonna en móvil es 4.8s según CrUX. Lighthouse identifica como elemento LCP la imagen hero (images.unsplash.com, 1920×1080). El hero usa next/image con fill, priority, objectFit cover. El TTFB es 280ms así que el servidor va bien. La imagen tiene quality por defecto (no especificado) y no tiene el atributo sizes. ¿Qué está causando el LCP tan alto y cómo lo bajo a menos de 2.5s?",
+      "expected_output": "Diagnóstico centrado en el atributo sizes faltante (el browser descarga la imagen en 100vw sin sizes), fix con sizes='100vw', quality={85}, y explicación de por qué priority ya está bien.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "identifies-missing-sizes-as-root-cause",
+          "description": "Response correctly identifies the missing `sizes` attribute as the primary (or a primary) LCP culprit"
+        },
+        {
+          "name": "includes-sizes-fix-code",
+          "description": "Response shows corrected Image component code with `sizes` attribute (e.g., sizes='100vw')"
+        },
+        {
+          "name": "mentions-quality-85",
+          "description": "Response recommends setting quality to 85 (or similar value) for better image compression"
+        },
+        {
+          "name": "explains-priority-already-correct",
+          "description": "Response notes that `priority` is already correctly set and is not the problem (does not suggest adding it as a fix)"
+        },
+        {
+          "name": "provides-metric-estimate",
+          "description": "Response estimates how much the LCP could improve with the proposed fixes"
+        }
+      ]
+    }
+  ]
+}

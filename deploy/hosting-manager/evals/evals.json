@@ -1,0 +1,61 @@
+{
+  "skill_name": "hosting-manager",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Tengo un proyecto Next.js en GitHub para un restaurante (lanonna.es). Quiero conectarlo a Vercel y configurar el dominio personalizado. El dominio está registrado en GoDaddy. ¿Cómo lo hago paso a paso? También quiero que www.lanonna.es redirija a lanonna.es.",
+      "expected_output": "Step-by-step setup: create Vercel project (CLI or dashboard), link to GitHub repo, add domain in Vercel settings, DNS records to add at GoDaddy (A record 76.76.21.21 and CNAME for www), www→apex redirect config, and how to verify SSL + propagation.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "includes-dns-records",
+          "description": "Includes specific DNS records: A record pointing to 76.76.21.21 or CNAME to cname.vercel-dns.com for the root/www"
+        },
+        {
+          "id": "mentions-ssl-auto",
+          "description": "Mentions that SSL certificate is automatically provisioned by Vercel after DNS resolves"
+        },
+        {
+          "id": "includes-www-redirect",
+          "description": "Explains how to set up www.lanonna.es → lanonna.es redirect (either via Vercel dashboard or next.config.ts redirects)"
+        },
+        {
+          "id": "ordered-steps",
+          "description": "Provides numbered or clearly ordered setup steps (not just a list of unordered tips)"
+        },
+        {
+          "id": "mentions-dns-propagation",
+          "description": "Mentions DNS propagation time (can take minutes to 48 hours) and how to check status"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Soy una agencia con 5 clientes distintos, cada uno con su propio proyecto Next.js en Vercel. Tengo 2 desarrolladores. ¿Qué plan de Vercel necesito? ¿Cómo gestiono el equipo y el acceso? Y los previews de los clientes, ¿puedo protegerlos con contraseña para que solo ellos los vean?",
+      "expected_output": "Pro plan recommendation with justification (commercial use requirement, team features, password protection). Team setup instructions, member roles (Owner/Member/Viewer), cost optimization tip (one team for all clients shares bandwidth/minutes), and deployment protection / password protection setup.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "recommends-pro-plan",
+          "description": "Recommends the Pro plan (not Hobby) with justification for commercial/agency use"
+        },
+        {
+          "id": "mentions-hobby-commercial-restriction",
+          "description": "Notes that Hobby plan cannot be used for commercial work (client projects) per Vercel ToS"
+        },
+        {
+          "id": "mentions-team-roles",
+          "description": "Explains team member roles: Owner (billing access), Member (deploy/configure), and/or Viewer (read-only)"
+        },
+        {
+          "id": "mentions-password-protection",
+          "description": "Mentions password protection for preview deployments (Deployment Protection in Vercel settings)"
+        },
+        {
+          "id": "mentions-cost-optimization",
+          "description": "Mentions that one Vercel team can host all client projects, sharing bandwidth and build minutes"
+        }
+      ]
+    }
+  ]
+}

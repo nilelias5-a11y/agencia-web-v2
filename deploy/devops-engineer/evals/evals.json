@@ -1,0 +1,61 @@
+{
+  "skill_name": "devops-engineer",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Estoy empezando un proyecto Next.js para un cliente (restaurante). ¿Cómo configuro el entorno en Vercel para separar staging y producción? Quiero que las PRs tengan preview automático, staging en una rama separada y producción en main.",
+      "expected_output": "Explanation of branch→environment mapping (main→prod, staging→staging, feature/*→preview), vercel.json configuration with regions and headers, env vars strategy per environment, and vercel CLI setup commands.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "mentions-three-environments",
+          "description": "Mentions all three environments: production (main), staging, and preview (feature branches/PRs)"
+        },
+        {
+          "id": "includes-vercel-json",
+          "description": "Includes a vercel.json configuration snippet with at least buildCommand, framework, or regions"
+        },
+        {
+          "id": "mentions-branch-mapping",
+          "description": "Explicitly explains which branch maps to which environment (main→production, staging→staging)"
+        },
+        {
+          "id": "recommends-eu-region",
+          "description": "Recommends cdg1 (Paris) or an EU region for a Spanish/EU restaurant client"
+        },
+        {
+          "id": "mentions-env-pull",
+          "description": "Mentions 'vercel env pull' or how to sync environment variables locally"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Mi app Next.js tiene muchas variables de entorno: la API key de Resend, la URL del sitio, un secreto para revalidación ISR, y la URL de la base de datos. ¿Cómo las manejo correctamente entre desarrollo, staging y producción? ¿Qué va en .env.local, qué en Vercel, qué en .gitignore?",
+      "expected_output": "Clear distinction between NEXT_PUBLIC_* (client-safe) and private server-only vars, .env.example committed with placeholder values, .env.local in .gitignore, Vercel dashboard env vars per environment, and a startup validation pattern (lib/env.ts).",
+      "files": [],
+      "assertions": [
+        {
+          "id": "distinguishes-public-private",
+          "description": "Distinguishes NEXT_PUBLIC_* (exposed to browser) from private server-only variables"
+        },
+        {
+          "id": "mentions-gitignore",
+          "description": "Mentions .env.local should be in .gitignore and never committed"
+        },
+        {
+          "id": "mentions-env-example",
+          "description": "Recommends committing a .env.example with placeholder values (no real secrets)"
+        },
+        {
+          "id": "includes-validation-code",
+          "description": "Includes code for validating required env vars at startup (fail-fast pattern, lib/env.ts or similar)"
+        },
+        {
+          "id": "mentions-per-environment-values",
+          "description": "Explains how to set different values per environment in Vercel (Production vs Preview vs Development)"
+        }
+      ]
+    }
+  ]
+}

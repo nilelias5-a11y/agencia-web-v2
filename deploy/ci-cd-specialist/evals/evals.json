@@ -1,0 +1,61 @@
+{
+  "skill_name": "ci-cd-specialist",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Quiero que ningún código roto llegue a producción en mi proyecto Next.js. Tengo el repo en GitHub y Vercel ya despliega automáticamente cuando hago merge a main. ¿Cómo configuro GitHub Actions para que compruebe types, lint y haga build antes de que se pueda mergear una PR? Y también quiero proteger la rama main.",
+      "expected_output": "Complete .github/workflows/ci.yml with type check (tsc --noEmit), lint, and build steps. Branch protection rules configuration in GitHub (require PR, status checks, dismiss stale approvals). Explanation of how Vercel + GitHub Actions work together.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "includes-github-actions-yaml",
+          "description": "Includes a complete .github/workflows/ci.yml YAML file with at least 3 steps (checkout, setup-node, and quality checks)"
+        },
+        {
+          "id": "includes-type-check",
+          "description": "Includes 'npx tsc --noEmit' or equivalent type checking step in the workflow"
+        },
+        {
+          "id": "includes-lint-step",
+          "description": "Includes a lint step (npm run lint or equivalent) in the workflow"
+        },
+        {
+          "id": "includes-branch-protection",
+          "description": "Explains branch protection rules: require PR, require status checks to pass, and/or dismiss stale reviews"
+        },
+        {
+          "id": "explains-vercel-github-integration",
+          "description": "Explains how Vercel auto-deploys while GitHub Actions adds quality gates (the two systems working together)"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Quiero añadir Lighthouse CI a mi pipeline de GitHub Actions. El requisito es que la accesibilidad nunca baje de 90 y el rendimiento de 85. Si falla, el PR no puede mergearse. ¿Cómo lo configuro?",
+      "expected_output": "Lighthouse CI GitHub Actions job, lighthouserc.js with correct thresholds (performance 0.85, accessibility 0.90), LHCI_GITHUB_APP_TOKEN secret, and explanation of how needs: quality chains it after the main quality job.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "includes-lighthouserc",
+          "description": "Includes a lighthouserc.js (or .lighthouserc.json) configuration file with assertions section"
+        },
+        {
+          "id": "correct-accessibility-threshold",
+          "description": "Sets accessibility threshold to 0.90 (90%) specifically, matching the user's requirement"
+        },
+        {
+          "id": "correct-performance-threshold",
+          "description": "Sets performance threshold to 0.85 (85%) specifically, matching the user's requirement"
+        },
+        {
+          "id": "includes-lhci-github-actions-job",
+          "description": "Includes a GitHub Actions job or step that runs 'npx lhci autorun' or equivalent Lighthouse CI command"
+        },
+        {
+          "id": "mentions-lhci-token",
+          "description": "Mentions LHCI_GITHUB_APP_TOKEN secret and where to get it (Lighthouse CI GitHub App)"
+        }
+      ]
+    }
+  ]
+}

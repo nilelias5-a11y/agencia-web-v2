@@ -1,0 +1,61 @@
+{
+  "skill_name": "performance-optimizer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "La web de La Nonna (restaurante italiano en Gràcia, Next.js 15) carga lenta en móviles. El next.config.ts solo tiene el plugin de next-intl y las imágenes remotas de Unsplash configuradas — sin optimizePackageImports. El layout usa Playfair Display y Lato via next/font con display: swap. El hero carga una imagen de Unsplash 1920px con priority y fill, pero sin el atributo sizes. El Lighthouse de móvil da Performance 71. ¿Cuáles son las optimizaciones más importantes que debería aplicar antes del deploy en Vercel?",
+      "expected_output": "Diagnóstico claro de los problemas (hero sin sizes, falta optimizePackageImports, etc.), optimizaciones ordenadas por impacto con código listo para copiar, y estimación de mejora en puntos de Lighthouse.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "mentions-sizes-attribute",
+          "description": "The response identifies the missing `sizes` attribute on the hero image as a priority fix"
+        },
+        {
+          "name": "includes-working-code",
+          "description": "The response includes actual code examples (not just advice) with `sizes` attribute or other specific code"
+        },
+        {
+          "name": "mentions-optimizePackageImports",
+          "description": "The response recommends adding `optimizePackageImports` to next.config.ts"
+        },
+        {
+          "name": "ordered-by-impact",
+          "description": "The optimizations are presented in priority or impact order, not a flat unordered list"
+        },
+        {
+          "name": "includes-metric-estimate",
+          "description": "The response estimates expected improvement in Lighthouse score or LCP time"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Quiero configurar el bundle analyzer en La Nonna (Next.js 15, desplegado en Vercel) para entender qué está inflando el bundle antes del deploy. El proyecto usa next-intl, Zod, Resend (solo en server actions), y CSS puro sin ninguna librería de componentes. Dame los pasos completos para instalar, configurar y analizar el bundle.",
+      "expected_output": "Instalación de @next/bundle-analyzer, configuración en next.config.ts, comando ANALYZE=true npm run build, y explicación de qué buscar en el reporte para next-intl y Zod.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "includes-install-command",
+          "description": "Response includes `npm install --save-dev @next/bundle-analyzer` or equivalent install command"
+        },
+        {
+          "name": "includes-next-config-code",
+          "description": "Response shows how to configure next.config.ts (or next.config.js) with the bundle analyzer wrapper"
+        },
+        {
+          "name": "includes-analyze-command",
+          "description": "Response includes the `ANALYZE=true npm run build` command (or equivalent)"
+        },
+        {
+          "name": "mentions-next-intl-in-report",
+          "description": "Response specifically mentions what to look for regarding next-intl in the bundle report"
+        },
+        {
+          "name": "notes-server-only-packages",
+          "description": "Response notes that Resend (server-only) should not appear in the client bundle, or explains server vs client bundle distinction"
+        }
+      ]
+    }
+  ]
+}

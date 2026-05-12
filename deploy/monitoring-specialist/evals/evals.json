@@ -1,0 +1,61 @@
+{
+  "skill_name": "monitoring-specialist",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Tengo la web de un restaurante en producción en Vercel. ¿Cómo sé si se cae? ¿Cómo me entero cuando hay errores en producción? Quiero que me llegue un aviso por email si algo falla. El presupuesto es limitado, preferiblemente gratis o casi gratis.",
+      "expected_output": "Monitoring stack for a restaurant site on a budget: UptimeRobot (free uptime monitoring with email alerts), Sentry free tier (error tracking with email notifications), /api/health endpoint to monitor. Stack recommendation appropriate for marketing/restaurant site, not over-engineered.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "mentions-sentry",
+          "description": "Recommends Sentry (free tier) for error tracking and production crash notifications"
+        },
+        {
+          "id": "mentions-uptimerobot-or-equivalent",
+          "description": "Recommends UptimeRobot (free) or similar uptime monitoring service with email alerts"
+        },
+        {
+          "id": "mentions-alert-configuration",
+          "description": "Explains how to configure email alerts (either in Sentry alert rules or UptimeRobot notification settings)"
+        },
+        {
+          "id": "mentions-health-endpoint",
+          "description": "Mentions or includes code for a /api/health endpoint to monitor"
+        },
+        {
+          "id": "appropriate-for-budget",
+          "description": "Recommends free or near-free tools appropriate for a restaurant site, not enterprise tools like Datadog or New Relic"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Quiero añadir analytics y monitoreo de rendimiento real de usuarios a mi web Next.js en Vercel. No quiero cookies ni problemas de GDPR. ¿Qué herramientas de Vercel puedo usar y cómo las instalo?",
+      "expected_output": "Vercel Analytics (@vercel/analytics) for privacy-friendly visitor stats + Speed Insights (@vercel/speed-insights) for real user Core Web Vitals. Both installed in app/layout.tsx. Explanation that no cookies are used, GDPR compliant. Mention of custom track() events for user actions.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "mentions-speed-insights",
+          "description": "Mentions @vercel/speed-insights for real user Core Web Vitals data (LCP, CLS, INP)"
+        },
+        {
+          "id": "mentions-vercel-analytics",
+          "description": "Mentions @vercel/analytics for privacy-friendly visitor analytics (no cookies, GDPR compliant)"
+        },
+        {
+          "id": "includes-layout-tsx-code",
+          "description": "Includes code showing how to add <Analytics /> and/or <SpeedInsights /> to app/layout.tsx"
+        },
+        {
+          "id": "mentions-no-cookies-gdpr",
+          "description": "Mentions that Vercel Analytics is cookie-free and GDPR compliant"
+        },
+        {
+          "id": "mentions-cwv-metrics",
+          "description": "Mentions at least one Core Web Vital metric (LCP, CLS, INP, FCP, or TTFB) that Speed Insights tracks"
+        }
+      ]
+    }
+  ]
+}

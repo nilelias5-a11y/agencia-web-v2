@@ -1,0 +1,61 @@
+{
+  "skill_name": "lighthouse-auditor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Acabo de pasar Lighthouse en desktop a La Nonna y me salen estos scores: Performance 74, Accessibility 88, SEO 82, Best Practices 95. Las auditorías fallidas más destacadas son: 'Largest Contentful Paint 3.4s', 'Eliminate render-blocking resources', 'Image elements do not have explicit width and height', y 'Links do not have a discernible name' (en el LanguageSwitcher que es un botón de icono sin aria-label). ¿Por dónde empiezo y cómo lo arreglo?",
+      "expected_output": "Priorización clara de los fixes por impacto, código para cada fix (aria-label en LanguageSwitcher, sizes en imágenes, etc.), y estimación de mejora en el score de Lighthouse.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "identifies-lcp-as-priority",
+          "description": "LCP 3.4s is identified as the main performance bottleneck to fix first"
+        },
+        {
+          "name": "provides-aria-label-fix",
+          "description": "Response includes concrete code for adding aria-label to the LanguageSwitcher button element"
+        },
+        {
+          "name": "addresses-all-four-audits",
+          "description": "All 4 failing audits are addressed: LCP, render-blocking resources, image dimensions, and link names"
+        },
+        {
+          "name": "includes-working-code",
+          "description": "At least one complete, executable code fix is provided (not just abstract advice)"
+        },
+        {
+          "name": "provides-score-estimate",
+          "description": "Response estimates expected score improvement after fixes"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Quiero añadir Lighthouse CI a La Nonna para que corra automáticamente en cada PR a main en GitHub. El deploy está en Vercel. Necesito que el PR falle si Performance baja de 85 o Accessibility baja de 90. El proyecto usa Next.js 15 con 17 páginas SSG. Dame la configuración completa.",
+      "expected_output": "lighthouserc.js con los thresholds correctos (performance ≥ 0.85, accessibility ≥ 0.90), GitHub Actions workflow YAML completo, e instrucciones para el LHCI_GITHUB_APP_TOKEN.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "includes-lighthouserc-js",
+          "description": "Response includes a complete lighthouserc.js configuration file"
+        },
+        {
+          "name": "correct-performance-threshold",
+          "description": "lighthouserc sets performance threshold at minScore 0.85 (not 0.84 or 0.9)"
+        },
+        {
+          "name": "correct-accessibility-threshold",
+          "description": "lighthouserc sets accessibility threshold at minScore 0.90 (not 0.88 or 0.95)"
+        },
+        {
+          "name": "includes-github-actions-yaml",
+          "description": "Response includes a complete GitHub Actions workflow YAML with proper steps (checkout, node setup, build, lhci)"
+        },
+        {
+          "name": "mentions-lhci-token",
+          "description": "Response mentions the LHCI_GITHUB_APP_TOKEN secret and how to set it up"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "skill_name": "security-auditor",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Tengo una web Next.js para un restaurante con un formulario de reservas. El servidor action recibe nombre, email, teléfono, fecha y número de personas, y lo envía por email con Resend. ¿Es seguro? ¿Qué debería revisar y mejorar?",
+      "expected_output": "Security audit covering: server-side input validation with Zod, rate limiting on form submission, never logging PII, secrets management (RESEND_API_KEY in env, not hardcoded), security headers, and an ordered checklist of what to check first.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "mentions-server-side-validation",
+          "description": "Mentions that form data must be validated on the server side (not just client-side), preferably with Zod"
+        },
+        {
+          "id": "includes-zod-schema",
+          "description": "Includes or references a Zod schema for validating reserva form fields (email, nombre, personas, fecha, etc.)"
+        },
+        {
+          "id": "mentions-rate-limiting",
+          "description": "Mentions rate limiting for the form submission endpoint or server action"
+        },
+        {
+          "id": "mentions-no-pii-in-logs",
+          "description": "Warns against logging PII (email, name, phone) in error logs or Sentry captures"
+        },
+        {
+          "id": "mentions-secrets-management",
+          "description": "Mentions that API keys (RESEND_API_KEY) must be in environment variables, not hardcoded in source code"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Quiero añadir security headers HTTP a mi proyecto Next.js en Vercel. ¿Cuáles son los más importantes y cómo los configuro? Necesito el código completo para next.config.ts.",
+      "expected_output": "Complete securityHeaders array in next.config.ts with X-Frame-Options: DENY, X-Content-Type-Options: nosniff, Strict-Transport-Security (HSTS), Referrer-Policy, Permissions-Policy, and Content-Security-Policy. Applied to all routes via /:path* pattern. Mention of verification tool (securityheaders.com or curl).",
+      "files": [],
+      "assertions": [
+        {
+          "id": "includes-x-frame-options-deny",
+          "description": "Includes X-Frame-Options: DENY (prevents clickjacking)"
+        },
+        {
+          "id": "includes-hsts",
+          "description": "Includes Strict-Transport-Security header with max-age (HTTPS enforcement)"
+        },
+        {
+          "id": "includes-csp",
+          "description": "Includes Content-Security-Policy header with at least default-src directive"
+        },
+        {
+          "id": "includes-next-config-headers-code",
+          "description": "Includes complete code in next.config.ts format: async headers() function returning array with source: '/:path*'"
+        },
+        {
+          "id": "mentions-verification",
+          "description": "Mentions securityheaders.com or 'curl -I https://yourdomain.com' to verify headers are set correctly"
+        }
+      ]
+    }
+  ]
+}

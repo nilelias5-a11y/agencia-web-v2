@@ -54,17 +54,30 @@ Any `.md` agent file from outside `~/.claude/agencia-web-v2/` before it is activ
 
 ### npm Package Audit
 
+**MANDATORY before issuing any verdict:**
+1. Search `snyk.io/vuln/npm:[package-name]` for the specific version being audited
+2. Search `site:github.com/advisories [package-name]` for security advisories
+3. For packages with access to credentials (email, database, auth, payments): also search `[package-name] CVE [version]` directly
+4. A SAFE verdict is only valid if you have done the above searches and found nothing. You must cite what you searched and what you found (or didn't find).
+
+**Packages with credential access** (nodemailer, db clients, auth libraries, Stripe/payment SDKs, session managers) require stricter rules:
+- Any unpatched CVE = automatic DANGER, regardless of severity score
+- Report: current version audited | latest safe version | CVE ID | patch version
+- Recommend upgrading to the latest stable version even if no CVE found
+
 ```
 Package: [name@version]
 
+□ Web search performed: snyk.io + GitHub Advisories (REQUIRED — cite results)
 □ Author/maintainer identity verified
 □ Repository exists and is active (last commit < 6 months)
 □ Weekly downloads > 1,000 (or justified exception)
-□ No known CVEs in current version (check snyk.io / npm audit)
+□ No known CVEs in current version — CITE SOURCES: [CVE-ID or "none found at snyk.io/vuln/npm:X and github.com/advisories"]
 □ No suspicious postinstall scripts
 □ Dependencies themselves are clean (1 level deep)
 □ Name is not a typosquat of a popular package
 □ License is compatible with commercial use
+□ [If credential package] Latest stable version confirmed and recommended
 ```
 
 ### GitHub Repository Audit
@@ -99,7 +112,7 @@ Agent: [filename]
 ## VERDICT SYSTEM
 
 ### ✅ SAFE
-All checklist items pass. Package/repo/agent can be used immediately. Cache verdict in memory.
+All checklist items pass **including active web search for CVEs with sources cited**. Package/repo/agent can be used immediately. Cache verdict in memory.
 
 ### ⚠️ CAUTION
 One or more items fail but risk is manageable. Report to `director` with:
@@ -131,8 +144,16 @@ Director must explicitly override to proceed. Override is logged permanently in 
 
 **Verdict:** ✅ SAFE / ⚠️ CAUTION / 🚫 DANGER
 
+**Sources searched:** [list: snyk.io/vuln/npm:X, github.com/advisories search, etc.]
+**CVEs found:** [CVE-ID + description, or "None found"]
+
 **Checklist results:**
 - [item]: Pass / Fail — [note if fail]
+
+**Version info (credential packages only):**
+- Audited version: [x.y.z]
+- Latest safe version: [x.y.z]
+- CVE patch version: [x.y.z or N/A]
 
 **Risk summary:** [one paragraph if CAUTION or DANGER]
 **Recommended action:** [specific next step]

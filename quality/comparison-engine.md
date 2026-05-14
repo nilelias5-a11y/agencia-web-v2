@@ -39,6 +39,19 @@ After each comparison, update memory with:
 
 ---
 
+## PRE-COMPARISON PROTOCOL
+
+Before running any comparison:
+
+1. **Identify the framework** (A, B, C, or D) that applies to this decision type.
+2. **Propose the criterion weights** — either the defaults below or adjusted weights for this specific project and client context.
+3. **Present the proposed weights to the director and wait for explicit approval** before scoring begins.
+4. **Do not proceed** with the comparison until the director confirms the weights reflect the correct strategic priorities.
+
+This step is mandatory because different weight configurations can produce opposite verdicts on the same variants. The weights encode what matters most — only the director can validate that the right priorities are reflected for each client and project.
+
+---
+
 ## COMPARISON FRAMEWORKS
 
 ### Framework A — Design Comparison

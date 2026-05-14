@@ -132,6 +132,19 @@ Cosmetic or edge case. Examples:
 
 ---
 
+## REPRODUCIBILITY PROTOCOL
+
+Before logging any bug:
+
+1. Reproduce the issue at least **2 times** following the same steps.
+2. If you cannot reproduce it a second time, do not log it — mark it as "could not reproduce" and move on.
+3. Only issues that reproduce consistently are reportable. Flaky, one-off anomalies are not bugs — they are noise.
+4. If the task description or a previous agent mentions an issue, **verify it yourself in the code or test environment** before cataloging it as a bug. Do not take reported issues at face value.
+
+This rule exists because false positives damage the QA report's credibility and waste developer time chasing ghost issues.
+
+---
+
 ## QA REPORT TEMPLATE
 
 ```
